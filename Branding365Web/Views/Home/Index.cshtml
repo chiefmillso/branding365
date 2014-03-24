@@ -1,0 +1,55 @@
+﻿@model Branding365Web.Models.HomeIndexViewModel
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+    <h2>Welcome @Model.UserName!</h2>
+    <p class="lead">
+        <b>Branding for SharePoint: @Model.SiteName</b>
+        @if (Model.HasCustomBranding)
+        {
+            <span class="badge">Customised</span>
+        }
+    </p>
+</div>
+<div class="row">
+    <div class="col-md-4">
+        <h2>Overview</h2>
+        <p>SharePoint introduces a Cloud App Model that enables a different way of provisioning content and branding. This app can be used to automatically brand a SharePoint Online site.</p>
+        <div class="row">
+            <div class="col-md-6">
+                @using (Html.BeginForm("DeployBranding", "Home"))
+                {
+                    <button type="submit" class="btn btn-primary pull-right" @Model.DeployButtonAttributes>Deploy</button>
+                    <br />
+                    <br />
+                    <div class="checkbox">
+                        <label for="chkExistingFiles"><input id="chkExistingFiles" type="checkbox" value="Override" />Override existing files</label>
+                    </div>
+                    <div class="checkbox">
+                        <label for="chkSubSites"><input id="chkSubSites" type="checkbox" value="SubSites" />Apply to sub sites</label>
+                    </div>
+                }
+            </div>
+            <div class="col-md-6">
+                @using (Html.BeginForm("RetractBranding", "Home"))
+                {
+                    <button type="submit" class="btn btn-warning btn-large" @Model.RetractButtonAttributes>Retract</button>
+                }
+            </div>
+        </div>
+        <pre style="height: 200px; overflow-y: scroll;">
+        </pre>
+    </div>
+    <div class="col-md-8">
+        <h2>Contents</h2>
+        <p>Version: @Html.Encode(Model.VersionNumber)</p>
+        <table class="table table-striped">
+            @foreach (var listing in Model.Items)
+            {
+                <tr><th>@Html.Encode(listing.Type)</th><td>@Html.Encode(listing.Source)</td></tr>
+            }
+        </table>
+    </div>
+</div>
