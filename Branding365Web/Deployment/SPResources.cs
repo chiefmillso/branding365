@@ -7,8 +7,10 @@ namespace Branding365Web
     {
 		public enum ListingTypes {
 			MasterPage,
+			Theme,
 			Page,
 			Script,
+			SiteAsset,
 			StyleLibrary,
 			Unknown
 		}
@@ -25,7 +27,7 @@ namespace Branding365Web
 
 		static Listings()
 		{
-			Items.Add(new Listing() { Source = @"Deployment/MasterPageGallery/Responsive.master",
+			Items.Add(new Listing() { Source = @"Deployment/Master Page Gallery/Responsive.master",
 									  Type = ListingTypes.MasterPage });
 			Items.Add(new Listing() { Source = @"Deployment/Style Library/OBS/bootstrap2-custom.min.css",
 									  Type = ListingTypes.StyleLibrary });

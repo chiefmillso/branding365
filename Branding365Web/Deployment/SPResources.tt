@@ -41,8 +41,10 @@ namespace <#= project.Name #>
     {
 		public enum ListingTypes {
 			MasterPage,
+			Theme,
 			Page,
 			Script,
+			SiteAsset,
 			StyleLibrary,
 			Unknown
 		}
@@ -89,7 +91,7 @@ namespace <#= project.Name #>
   
     var directoryName = new DirectoryInfo(topLevel.FileNames[0]).Name;
 	switch (directoryName) {
-		case "MasterPageGallery":
+		case "Master Page Gallery":
 			return "ListingTypes.MasterPage";
 		case "Pages":
 			return "ListingTypes.Page";

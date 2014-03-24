@@ -130,7 +130,11 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Deployment\Composed Looks\" />
+    <Folder Include="Deployment\Pages\" />
+    <Folder Include="Deployment\Site Assets\" />
     <Folder Include="Deployment\Style Library\OBS\Images\" />
+    <Folder Include="Deployment\Theme Gallery\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\AutofacConfig.cs" />
@@ -173,7 +177,7 @@
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
-    <Content Include="Deployment\MasterPageGallery\Responsive.master" />
+    <Content Include="Deployment\Master Page Gallery\Responsive.master" />
     <Content Include="Deployment\SPResources.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>SPResources.cs</LastGenOutput>
