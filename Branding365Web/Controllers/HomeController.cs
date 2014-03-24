@@ -43,9 +43,9 @@ namespace Branding365Web.Controllers
             return View(model);
         }
 
-        public ActionResult DeployBranding()
+        public ActionResult DeployBranding(DeployBrandingModel model)
         {
-            _brandingService.DeployBranding(ClientContext);
+            _brandingService.DeployBranding(ClientContext, model.ApplyToSubSites, model.OverrideExistingFiles);
 
             return RedirectToSPAction("Index");
         }

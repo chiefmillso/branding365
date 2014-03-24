@@ -42,8 +42,10 @@ namespace Branding365Web.Services
             return false;
         }
 
-        public void DeployBranding(ClientContext ctx)
+        public void DeployBranding(ClientContext ctx, bool applyToSubsites, bool overrideExistingFiles)
         {
+            // TODO: do stuff here
+
             SetCustomBranding(true, ctx);
         }
 
