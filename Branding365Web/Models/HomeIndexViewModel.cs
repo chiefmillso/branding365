@@ -7,6 +7,8 @@ namespace Branding365Web.Models
 {
     public class HomeIndexViewModel
     {
+        public string Log { get; set; }
+
         public string DeployButtonAttributes
         {
             get

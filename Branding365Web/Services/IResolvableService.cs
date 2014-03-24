@@ -9,4 +9,8 @@ namespace Branding365Web.Services
     interface IResolvableService
     {
     }
+
+    interface ISingletonService
+    {
+    }
 }

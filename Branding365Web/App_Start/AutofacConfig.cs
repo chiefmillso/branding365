@@ -19,6 +19,13 @@ namespace Branding365Web
                 .AsSelf()
                 .InstancePerLifetimeScope();
 
+
+            builder.RegisterAssemblyTypes(typeof(MvcApplication).Assembly)
+                .AssignableTo<ISingletonService>()
+                .AsImplementedInterfaces()
+                .AsSelf()
+                .SingleInstance();
+
             builder.RegisterControllers(typeof(MvcApplication).Assembly)
                 .PropertiesAutowired(PropertyWiringOptions.PreserveSetValues);
 

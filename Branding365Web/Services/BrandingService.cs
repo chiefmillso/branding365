@@ -6,6 +6,12 @@ namespace Branding365Web.Services
     public class BrandingService : IResolvableService
     {
         private const string Key = "Branding365.Enabled";
+        private readonly Logger _logger;
+
+        public BrandingService(Logger logger)
+        {
+            _logger = logger;
+        }
 
         public bool HasCustomBranding(ClientContext ctx)
         {
@@ -27,6 +33,8 @@ namespace Branding365Web.Services
             properties[Key] = enabled;
             web.Update();
 
+            _logger.AppendLine("Set Custom Branding Property: {0}", enabled);
+
             ctx.ExecuteQuery();
         }
 
@@ -44,6 +52,8 @@ namespace Branding365Web.Services
 
         public void DeployBranding(ClientContext ctx, bool applyToSubsites, bool overrideExistingFiles)
         {
+            _logger.AppendLine("Deploying Branding...");
+
             // TODO: do stuff here
 
             SetCustomBranding(true, ctx);
@@ -51,6 +61,8 @@ namespace Branding365Web.Services
 
         public void RetractBranding(ClientContext ctx)
         {
+            _logger.AppendLine("Retracting Branding...");
+
             SetCustomBranding(false, ctx);
         }
     }

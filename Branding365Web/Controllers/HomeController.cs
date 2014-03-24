@@ -13,10 +13,12 @@ namespace Branding365Web.Controllers
     {
 
         private readonly BrandingService _brandingService;
+        private readonly Logger _logger;
 
-        public HomeController(BrandingService brandingService)
+        public HomeController(BrandingService brandingService, Logger logger)
         {
             _brandingService = brandingService;
+            _logger = logger;
         }
 
         public ActionResult Index()
@@ -38,6 +40,9 @@ namespace Branding365Web.Controllers
 
                 model.VersionNumber = Listings.VersionNumber;
                 model.Items = Listings.Items;
+                model.Log = _logger.ToString();
+                
+                _logger.Clear();
             }
 
             return View(model);
