@@ -54,6 +54,8 @@ namespace Branding365Web.Services
         {
             _logger.AppendLine("Deploying Branding...");
 
+            // Copy - Master Page First
+
             // TODO: do stuff here
 
             SetCustomBranding(true, ctx);
