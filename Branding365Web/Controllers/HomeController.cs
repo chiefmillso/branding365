@@ -29,12 +29,13 @@ namespace Branding365Web.Controllers
                 var spWeb = ClientContext.Web;
                 User spUser = ClientContext.Web.CurrentUser;
 
-                ClientContext.Load(spWeb, web => web.Title);
+                ClientContext.Load(spWeb, web => web.Title, web => web.Url);
                 ClientContext.Load(spUser, user => user.Title);
 
                 ClientContext.ExecuteQuery();
 
                 model.SiteName = spWeb.Title;
+                model.SiteUrl = spWeb.Url;
                 model.UserName = spUser.Title;
                 model.HasCustomBranding = _brandingService.HasCustomBranding(ClientContext);
 
