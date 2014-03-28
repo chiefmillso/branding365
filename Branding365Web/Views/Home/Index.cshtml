@@ -25,7 +25,7 @@
                     <br />
                     <br />
                     <div class="checkbox">
-                        <label for="chkExistingFiles"><input id="chkExistingFiles" name="OverrideExistingFiles" type="checkbox" value="true" />Override existing files</label>
+                        <label for="chkExistingFiles"><input id="chkExistingFiles" name="OverrideExistingFiles" type="checkbox" value="true" checked="checked" />Override existing files</label>
                     </div>
                     <div class="checkbox">
                         <label for="chkSubSites"><input id="chkSubSites" name="ApplyToSubSites" type="checkbox" value="true" />Apply to sub sites</label>
@@ -39,7 +39,8 @@
                 }
             </div>
         </div>
-        <pre style="height: 200px; overflow-y: scroll;">@Html.Encode(Model.Log)</pre>
+        <h4>Log</h4>
+        <pre>@Html.Raw(Model.ThemeInfo)</pre>
     </div>
     <div class="col-md-8">
         <h2>Contents</h2>
@@ -50,5 +51,11 @@
                 <tr><th>@Html.Encode(listing.Type)</th><td>@Html.Encode(listing.Source)</td></tr>
             }
         </table>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <h4>Theme Info</h4>
+        <pre style="height: 200px; overflow-y: scroll;">@Html.Encode(Model.Log)</pre>
     </div>
 </div>

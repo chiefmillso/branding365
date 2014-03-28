@@ -95,6 +95,8 @@ namespace <#= project.Name #>
 			return "ListingTypes.MasterPage";
 		case "Pages":
 			return "ListingTypes.Page";
+		case "Theme Gallery":
+			return "ListingTypes.Theme";
 		case "Scripts":
 			return "ListingTypes.Script";
 		case "Style Library":
@@ -106,7 +108,7 @@ namespace <#= project.Name #>
 
   public bool IsValid(EnvDTE.ProjectItem item) {
 	
-	string [] extensions = "aspx, ascx, master, js, css".Split(',').Select(x => "." + x.Trim()).Distinct().ToArray();
+	string [] extensions = "aspx, ascx, master, html, js, css, spcolor, spfont, png, jpg, gif, less".Split(',').Select(x => "." + x.Trim()).Distinct().ToArray();
 	
 	var path = item.FileNames[0];
 	var filename = System.IO.Path.GetFileName(path);

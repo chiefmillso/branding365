@@ -43,6 +43,10 @@ namespace Branding365Web
 									  Type = ListingTypes.StyleLibrary });
 			Items.Add(new Listing() { Source = @"Deployment/Style Library/OBS/sp-responsive.css",
 									  Type = ListingTypes.StyleLibrary });
+			Items.Add(new Listing() { Source = @"Deployment/Theme Gallery/ThemeSample.spcolor",
+									  Type = ListingTypes.Theme });
+			Items.Add(new Listing() { Source = @"Deployment/Theme Gallery/ThemeSample.spfont",
+									  Type = ListingTypes.Theme });
 		}
 	}
 }

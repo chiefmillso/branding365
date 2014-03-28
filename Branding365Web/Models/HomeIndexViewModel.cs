@@ -40,6 +40,8 @@ namespace Branding365Web.Models
 
         public string VersionNumber { get; set; }
 
+        public string ThemeInfo { get; set; }
+
         public IList<Listings.Listing> Items { get; set; }
     }
 }
