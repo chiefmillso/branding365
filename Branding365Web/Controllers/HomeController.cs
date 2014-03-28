@@ -38,6 +38,7 @@ namespace Branding365Web.Controllers
                 model.SiteUrl = spWeb.Url;
                 model.UserName = spUser.Title;
                 model.HasCustomBranding = _brandingService.HasCustomBranding(ClientContext);
+                model.ThemeInfo = _brandingService.GetThemeInfo(ClientContext);
 
                 model.VersionNumber = Listings.VersionNumber;
                 model.Items = Listings.Items;
@@ -51,7 +52,8 @@ namespace Branding365Web.Controllers
 
         public ActionResult DeployBranding(DeployBrandingModel model)
         {
-            _brandingService.DeployBranding(ClientContext, model.ApplyToSubSites, model.OverrideExistingFiles);
+            _brandingService.Overwrite = model.OverrideExistingFiles;
+            _brandingService.DeployBranding(ClientContext, model.ApplyToSubSites);
 
             return RedirectToSPAction("Index");
         }

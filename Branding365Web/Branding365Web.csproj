@@ -134,7 +134,6 @@
     <Folder Include="Deployment\Pages\" />
     <Folder Include="Deployment\Site Assets\" />
     <Folder Include="Deployment\Style Library\OBS\Images\" />
-    <Folder Include="Deployment\Theme Gallery\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\AutofacConfig.cs" />
@@ -182,6 +181,8 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>SPResources.cs</LastGenOutput>
     </Content>
+    <Content Include="Deployment\Theme Gallery\ThemeSample.spcolor" />
+    <Content Include="Deployment\Theme Gallery\ThemeSample.spfont" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />

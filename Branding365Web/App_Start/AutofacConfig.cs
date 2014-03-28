@@ -30,6 +30,7 @@ namespace Branding365Web
                 .PropertiesAutowired(PropertyWiringOptions.PreserveSetValues);
 
             builder.RegisterFilterProvider();
+            builder.RegisterModule(new AutofacWebTypesModule());
 
             IContainer container = builder.Build();
             DependencyResolver.SetResolver(new AutofacDependencyResolver(container));
