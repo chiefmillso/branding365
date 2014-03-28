@@ -32,6 +32,8 @@ namespace Branding365Web.Models
 
         public string SiteName { get; set; }
 
+        public string SiteUrl { get; set; }
+
         public string UserName { get; set; }
 
         public bool HasCustomBranding { get; set; }

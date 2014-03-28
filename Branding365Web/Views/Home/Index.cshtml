@@ -6,7 +6,7 @@
 <div class="jumbotron">
     <h2>Welcome @Model.UserName!</h2>
     <p class="lead">
-        <b>Branding for SharePoint: @Model.SiteName</b>
+        <b>Branding for SharePoint: <a href="@Model.SiteUrl">@Model.SiteName</a></b>
         @if (Model.HasCustomBranding)
         {
             <span class="badge">Customised</span>
